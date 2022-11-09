@@ -12,10 +12,13 @@ export default {
     AppHero
   },
   methods: {
-
+    
   },
   computed() {
-
+    
+  },
+  created() {
+    
   }
 }
 

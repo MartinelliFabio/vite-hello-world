@@ -1,5 +1,5 @@
 <template>
-    <div class="jumbo">
+    <div v-if="selectedImage" class="jumbo" :style="{ background: 'linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url(' + selectedImage + ')', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }">
         <AppTitle/>
     </div>
 </template>
@@ -15,9 +15,28 @@ import AppTitle from './AppTitle.vue';
         }, 
         data() {
             return {
-                
+                activeIndex: 0,
+                image: [
+                    'https://source.unsplash.com/random/',
+                ],
+                selectedImage: null
             }
-        }
+        },
+        methods: {
+            randomItem (items) {
+                return items[Math.floor(Math.random()*items.length)];
+            },
+        },
+        computed() {
+            
+        },
+        created() {
+            this.selectedImage = this.randomItem(this.image)
+        },
+        mounted() {
+
+        },
+
     }
 </script>
 
@@ -28,9 +47,9 @@ import AppTitle from './AppTitle.vue';
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 350px;
+        height: 60vh;
         text-align: center;
-        background-color: blue; 
+        text-shadow: 2px 4px #000000;
     }
 
 </style>
