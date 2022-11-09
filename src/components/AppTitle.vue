@@ -1,6 +1,7 @@
 <template>
     <div class="title">
         <h1>{{titolo}}</h1>
+        <p>{{subTitle}}</p>
     </div>
 </template>
 
@@ -9,7 +10,8 @@
         name: 'AppTitle',
         data() {
             return {
-                titolo: 'La mia prima app con Vite!'
+                titolo: 'La mia prima app con Vite!',
+                subTitle: 'Sottotitolo del Jumbotron'
             }
         }
     }
@@ -17,15 +19,17 @@
 
 <style lang="css">
     .title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 150px;
+        color: white;
     }
 
     h1 {
-        color: white;
         font-weight: bold;
+        margin-bottom: 20px;
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 20px;
     }
 
 </style>
